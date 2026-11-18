@@ -209,3 +209,25 @@ display(
     )
     .orderBy("fecha")
 )
+
+# COMMAND ----------
+
+(
+    df_gold.write
+    .format("delta")
+    .mode("overwrite")
+    .saveAsTable(
+        "micromobility.streaming.gold_station_analytics"
+    )
+)
+
+print("Tabla gold_station_analytics guardada correctamente.")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SELECT
+# MAGIC     COUNT(*) AS total_registros,
+# MAGIC     COUNT(DISTINCT id) AS estaciones_distintas,
+# MAGIC     AVG(occupancy_pct) AS ocupacion_promedio
+# MAGIC FROM micromobility.streaming.gold_station_analytics;
