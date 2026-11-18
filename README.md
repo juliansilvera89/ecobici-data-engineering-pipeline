@@ -1,62 +1,60 @@
-# ecobici-data-engineering-pipeline
-
-
-![Pipeline Architecture](images/architecture.png)
-
-
-
-End-to-end data engineering pipeline using Python, Databricks, PySpark, Auto Loader and Delta Lake to analyze ECOBICI station availability.
-
-
 ECOBICI Data Engineering Pipeline
 
-An end-to-end Data Engineering project built with Databricks, PySpark and Python, using real-time station data from the ECOBICI bike-sharing system in Buenos Aires.
+An end-to-end Data Engineering project built with Python, Databricks and PySpark, using station availability data from the ECOBICI bike-sharing system in Buenos Aires, Argentina.
 
 Architecture
 
-API → Raw → Bronze → Silver → Gold
 
-The pipeline extracts station data from the CityBik.es API, stores JSON snapshots and processes them through the Medallion Architecture using Delta tables.
+
+The pipeline follows the Medallion Architecture, processing data through Raw, Bronze, Silver and Gold layers.
 
 Technologies
 
-Python
+Python – API data extraction
 
-Databricks
+Databricks – Data processing and orchestration
 
-Apache Spark / PySpark
+Apache Spark / PySpark – Distributed data transformations
 
-Delta Lake
+Auto Loader – Incremental data ingestion
 
-Auto Loader
+Delta Lake – Reliable data storage
 
-REST API
+REST API – Data source
 
-Git / GitHub
+Git / GitHub – Version control
 
 Data Pipeline
 
-Extraction: Retrieves station availability data from the ECOBICI API.
+Extraction: Retrieves station availability data from the CityBik.es ECOBICI API and stores JSON snapshots.
 
 Bronze: Ingests raw JSON data using Databricks Auto Loader.
 
 Silver: Cleans, transforms and structures station data.
 
-Gold: Generates analytics on station occupancy, availability and bike movement patterns.
+Gold: Generates analytical datasets for station occupancy, availability and bike movement patterns.
 
-Data Quality: Includes validation checks to assess data consistency.
+Data Quality: Performs validation checks to assess data consistency.
+
+Pipeline Execution
+
+The pipeline is orchestrated using Databricks Workflows, with task dependencies between extraction, ingestion and transformation stages.
+
+
 
 Key Features
 
-Automated data ingestion and processing.
+Automated API data extraction.
 
-Incremental file ingestion with Auto Loader.
+Incremental ingestion with Auto Loader.
 
 Medallion Architecture implementation.
 
 Delta Lake tables for structured data storage.
 
-Databricks Workflows for pipeline orchestration.
+Analytical transformations using PySpark.
+
+Workflow orchestration with Databricks.
 
 Data Source
 
