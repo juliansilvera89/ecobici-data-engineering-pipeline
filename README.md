@@ -4,6 +4,8 @@ An end-to-end Data Engineering project built with Python, Databricks and PySpark
 
 Architecture
 
+![Pipeline Architecture](images/architecture.png)
+
 
 
 The pipeline follows the Medallion Architecture, processing data through Raw, Bronze, Silver and Gold layers.
@@ -37,6 +39,8 @@ Gold: Generates analytical datasets for station occupancy, availability and bike
 Data Quality: Performs validation checks to assess data consistency.
 
 Pipeline Execution
+
+![Databricks Workflow Execution](images/workflow_execution.png)
 
 The pipeline is orchestrated using Databricks Workflows, with task dependencies between extraction, ingestion and transformation stages.
 
